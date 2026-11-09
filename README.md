@@ -2,7 +2,7 @@
 
 > Tell your dream in 60 seconds. Understand yourself a little better every morning.
 
-[![CI/CD](https://github.com/erotonin/dem-qua/actions/workflows/ci.yml/badge.svg)](https://github.com/erotonin/dem-qua/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/erotonin/dream/actions/workflows/ci.yml/badge.svg)](https://github.com/erotonin/dream/actions/workflows/ci.yml)
 
 **Đêm Qua** ("last night" in Vietnamese; working name) is a dream journal with AI interpretation, built for Vietnamese users. Each morning you tap the mic and describe last night's dream. The app writes an interpretation for you with a psychological reading, a Vietnamese folk reading, a question to reflect on and a small suggestion for the day. Over time it spots recurring symbols and dreams and sends a monthly letter about your dream life.
 
@@ -110,11 +110,11 @@ The workflow in [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on e
 
 One-time setup to turn on deploys:
 
-1. Create the database: `npx wrangler d1 create dem-qua`. Put the printed `database_id` into `wrangler.jsonc`.
+1. Create the database: `npx wrangler d1 create dream`. Put the printed `database_id` into `wrangler.jsonc`.
 2. Set the API key on the Worker: `npx wrangler secret put ANTHROPIC_API_KEY`.
 3. In GitHub, go to **Settings → Secrets and variables → Actions** and add:
    - Secrets: `CLOUDFLARE_API_TOKEN` (needs *Workers Scripts: Edit* and *D1: Edit*) and `CLOUDFLARE_ACCOUNT_ID`.
-   - Optional variable: `APP_URL` (e.g. `https://dem-qua.<subdomain>.workers.dev`). When set, the deploy job runs a smoke test against `/api/health`.
+   - Optional variable: `APP_URL` (e.g. `https://dream.<subdomain>.workers.dev`). When set, the deploy job runs a smoke test against `/api/health`.
 
 Dependabot opens weekly dependency PRs, which go through the same checks.
 

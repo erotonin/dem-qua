@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "dem-qua",
+  "name": "dream",
   "main": "src/worker/index.ts",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
@@ -12,8 +12,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "dem-qua",
-      // Replace with the id printed by `npx wrangler d1 create dem-qua` before the first deploy.
+      "database_name": "dream",
+      // Replace with the id printed by `npx wrangler d1 create dream` before the first deploy.
       // Local dev and tests work with this placeholder.
       "database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "migrations"

@@ -5,7 +5,7 @@ import type {
   ListDreamsResponse,
 } from "../shared/schemas";
 
-const DEVICE_KEY = "demqua.deviceId";
+const DEVICE_KEY = "dream.deviceId";
 let memoryDeviceId: string | null = null;
 
 /** Anonymous id kept in localStorage; falls back to memory if storage is blocked. */
