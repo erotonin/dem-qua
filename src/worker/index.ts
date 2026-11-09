@@ -5,7 +5,7 @@ import { D1DreamRepo } from "./repo";
 
 const app = createApp((env: Env) => ({
   repo: new D1DreamRepo(env.DB),
-  interpreter: createInterpreter(env.ANTHROPIC_API_KEY, env.CLAUDE_MODEL),
+  interpreter: createInterpreter(env.ANTHROPIC_API_KEY, env.AI_MODEL),
 }));
 
 export default app satisfies ExportedHandler<Env>;

@@ -87,7 +87,7 @@ Without `ANTHROPIC_API_KEY` the app runs in mock mode. `GET /api/health` shows w
 | Name | Where | Purpose |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Worker secret / `.dev.vars` | Enables live interpretations. Unset means mock mode |
-| `CLAUDE_MODEL` | `wrangler.jsonc` vars | Model id. Defaults to `claude-opus-5-5`. A cheaper model can be set here once quality is measured |
+| `AI_MODEL` | `wrangler.jsonc` vars | Model id. Defaults to `claude-opus-5-5`. A cheaper model can be set here once quality is measured |
 | `APP_ENV` | `wrangler.jsonc` vars / `.dev.vars` | `production`, `development`, ... |
 
 ## API

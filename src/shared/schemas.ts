@@ -28,7 +28,7 @@ export type DreamInputPayload = z.input<typeof DreamInputSchema>;
 
 /**
  * The 6-part interpretation (see docs/KE-HOACH-SAN-PHAM.md, section 4).
- * Also used as the structured-output schema for the Claude API call.
+ * Also used as the structured-output schema for the AI API call.
  */
 export const InterpretationSchema = z.object({
   title: z.string().describe("Tên gợi hình cho giấc mơ, 2–7 chữ"),

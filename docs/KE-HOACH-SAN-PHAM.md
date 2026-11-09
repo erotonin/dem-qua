@@ -329,7 +329,7 @@ Trước cuộc họp tiếp theo, hãy nói to phần mở đầu một lần. 
 |---|---|---|
 | Ứng dụng | Web app cài được lên màn hình chính (PWA), chạy tốt trên điện thoại | Ra mắt nhanh, có SEO, chưa mất phí cho App Store |
 | Máy chủ | Cloudflare Workers + D1 (dữ liệu) + R2 (ảnh) | Rẻ, nhanh, dễ triển khai |
-| AI giải mã | Claude API: Haiku cho bản tóm tắt và phân loại, Sonnet cho bài đầy đủ và thư tháng | Dùng prompt caching cho phần hướng dẫn hệ thống để giảm chi phí |
+| AI giải mã | API mô hình AI: model nhỏ cho bản tóm tắt và phân loại, model mạnh cho bài đầy đủ và thư tháng | Dùng prompt caching cho phần hướng dẫn hệ thống để giảm chi phí |
 | Giọng nói thành chữ | Web Speech API (miễn phí, Chrome/Android hỗ trợ tiếng Việt tốt) + dịch vụ STT dự phòng cho iPhone | Cần thử chất lượng tiếng Việt có giọng địa phương |
 | Vẽ tranh | Dịch vụ tạo ảnh bên thứ ba | Đo chi phí mỗi tranh trước khi chốt hạn mức |
 | Nhắc nhở | Zalo OA (tin nhắn ZNS) + thông báo trình duyệt | ZNS tính phí theo tin, cần đăng ký mẫu tin |

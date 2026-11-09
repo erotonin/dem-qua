@@ -30,7 +30,7 @@ export const DEFAULT_MODEL = "claude-opus-5-5";
 /** Server-side refusal fallbacks are not offered for Haiku models. */
 const supportsServerFallback = (model: string) => !model.startsWith("claude-haiku");
 
-export class ClaudeInterpreter implements Interpreter {
+export class LlmInterpreter implements Interpreter {
   readonly mode = "live" as const;
 
   constructor(
@@ -56,7 +56,7 @@ export class ClaudeInterpreter implements Interpreter {
       });
     } catch (error) {
       if (error instanceof Anthropic.APIError) {
-        throw new InterpretationError(`Claude API error ${error.status ?? "?"}`, "upstream");
+        throw new InterpretationError(`AI API error ${error.status ?? "?"}`, "upstream");
       }
       throw error;
     }
@@ -108,8 +108,8 @@ export class MockInterpreter implements Interpreter {
       symbols: [
         {
           name: "Biểu tượng mẫu",
-          psychology: showPsych ? "Góc tâm lý sẽ xuất hiện ở đây khi kết nối Claude API." : "",
-          folk: showFolk ? "Góc dân gian Việt sẽ xuất hiện ở đây khi kết nối Claude API." : "",
+          psychology: showPsych ? "Góc tâm lý sẽ xuất hiện ở đây khi kết nối API AI." : "",
+          folk: showFolk ? "Góc dân gian Việt sẽ xuất hiện ở đây khi kết nối API AI." : "",
         },
       ],
       lifeConnection: "Thêm ANTHROPIC_API_KEY vào .dev.vars để nhận bài giải thật.",
@@ -122,5 +122,5 @@ export class MockInterpreter implements Interpreter {
 
 export function createInterpreter(apiKey: string | undefined, model: string | undefined): Interpreter {
   if (!apiKey) return new MockInterpreter();
-  return new ClaudeInterpreter(new Anthropic({ apiKey }), model || DEFAULT_MODEL);
+  return new LlmInterpreter(new Anthropic({ apiKey }), model || DEFAULT_MODEL);
 }

@@ -2,7 +2,7 @@ import type Anthropic from "@anthropic-ai/sdk";
 import { describe, expect, it, vi } from "vitest";
 import type { DreamInput, Interpretation } from "../src/shared/schemas";
 import {
-  ClaudeInterpreter,
+  LlmInterpreter,
   createInterpreter,
   InterpretationError,
   MockInterpreter,
@@ -50,12 +50,12 @@ describe("buildUserMessage", () => {
   });
 });
 
-describe("ClaudeInterpreter", () => {
+describe("LlmInterpreter", () => {
   it("parses a structured response", async () => {
     const { client, create } = fakeClient({
       content: [{ type: "text", text: JSON.stringify(sample), citations: null }],
     });
-    const result = await new ClaudeInterpreter(client, "claude-opus-5-5").interpret(input);
+    const result = await new LlmInterpreter(client, "claude-opus-5-5").interpret(input);
     expect(result).toEqual(sample);
 
     const params = create.mock.calls[0]?.[0];
@@ -69,13 +69,13 @@ describe("ClaudeInterpreter", () => {
     const { client, create } = fakeClient({
       content: [{ type: "text", text: JSON.stringify(sample), citations: null }],
     });
-    await new ClaudeInterpreter(client, "claude-haiku-5-5").interpret(input);
+    await new LlmInterpreter(client, "claude-haiku-5-5").interpret(input);
     expect(create.mock.calls[0]?.[0].fallbacks).toBeUndefined();
   });
 
   it("turns a refusal into an InterpretationError", async () => {
     const { client } = fakeClient({ stop_reason: "refusal" });
-    await expect(new ClaudeInterpreter(client).interpret(input)).rejects.toMatchObject({
+    await expect(new LlmInterpreter(client).interpret(input)).rejects.toMatchObject({
       name: "InterpretationError",
       kind: "refusal",
     });
