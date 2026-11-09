@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local development (never commit .dev.vars).
+# Leave ANTHROPIC_API_KEY empty to run with the built-in mock interpreter.
+ANTHROPIC_API_KEY=
+APP_ENV=development

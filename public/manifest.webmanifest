@@ -1,0 +1,18 @@
+{
+  "name": "Đêm Qua – Nhật ký giấc mơ",
+  "short_name": "Đêm Qua",
+  "description": "Kể giấc mơ trong 60 giây. Hiểu mình hơn mỗi sáng.",
+  "lang": "vi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1226",
+  "theme_color": "#0f1226",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

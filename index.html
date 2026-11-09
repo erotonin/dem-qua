@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Kể giấc mơ trong 60 giây. Hiểu mình hơn mỗi sáng." />
+    <meta name="theme-color" content="#0f1226" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <title>Đêm Qua</title>
+  </head>
+  <body>
+    <main id="app" class="app">
+      <header class="hero">
+        <p class="brand">🌙 Đêm Qua</p>
+        <h1 id="greeting">Đêm qua bạn mơ gì?</h1>
+        <p class="sub">Kể ngay kẻo quên. Nói hay gõ đều được.</p>
+      </header>
+
+      <form id="dream-form" class="card" novalidate>
+        <div class="input-row">
+          <textarea
+            id="dream-text"
+            name="text"
+            rows="5"
+            maxlength="4000"
+            placeholder="Ví dụ: Mình mơ đang thuyết trình trước sếp thì răng rụng từng cái…"
+            required
+          ></textarea>
+          <button type="button" id="mic" class="mic" aria-pressed="false" aria-label="Kể bằng giọng nói">🎙️</button>
+        </div>
+        <p id="mic-status" class="hint" aria-live="polite"></p>
+
+        <fieldset>
+          <legend>Khi tỉnh dậy bạn thấy thế nào?</legend>
+          <div class="chips" data-name="mood"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Dạo này bạn bận tâm nhất về chuyện gì?</legend>
+          <div class="chips" data-name="concern"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Bạn muốn xem theo góc nào?</legend>
+          <div class="chips" data-name="lens"></div>
+        </fieldset>
+
+        <p id="form-error" class="error" role="alert"></p>
+        <button type="submit" id="submit" class="primary">Giải mã giấc mơ</button>
+      </form>
+
+      <section id="result" class="card result" hidden aria-live="polite"></section>
+
+      <section class="journal">
+        <h2>Nhật ký giấc mơ</h2>
+        <ul id="journal-list" class="journal-list"></ul>
+      </section>
+
+      <footer class="footer">
+        Bài viết mang tính tham khảo và tự suy ngẫm, không thay thế tư vấn y tế hay tâm lý.
+      </footer>
+    </main>
+    <script type="module" src="/src/client/main.ts"></script>
+  </body>
+</html>
